@@ -6,13 +6,16 @@
 3 - che age sia un numero
 Se tutto è ok stampare “Accesso riuscito”, altrimenti “Accesso negato” */
 
-$name = $_GET['name'];
-$email = $_GET['email'];
-$age = $_GET['age'];
+
 
 if (empty($name) || empty($email) || empty($age)) {
     echo 'Errore, uno o più campi sono vuoti!';
 }else{
+
+    $name = $_GET['name'];
+    $email = $_GET['email'];
+    $age = $_GET['age'];
+
     if (strpos($email, '@') !== false && strpos($email, '.') !== false && strlen($name) > 3 && is_numeric($age)){
 
         echo "Accesso riuscito";
@@ -20,4 +23,3 @@ if (empty($name) || empty($email) || empty($age)) {
         echo "Accesso negato";
     }
 }
-
